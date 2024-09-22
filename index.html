@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSL vs FTTH: Operating Principles</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-left: 240px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        p, li {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .team {
+            background-color: #e7f0ff;
+            padding: 15px;
+            border-left: 5px solid #0056b3;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .conclusions {
+            margin-top: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #28a745;
+            border-radius: 8px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .highlight {
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        .references {
+            margin-top: 30px;
+        }
+        .toc {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            background-color: #e7f0ff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .toc h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc ul li {
+            margin-bottom: 5px;
+        }
+        .toc ul li a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+	    <li><a href="#team">Team Members</a></li>
+        <li><a href="#adsl">ADSL Overview</a></li>
+        <li><a href="#adsl-architecture">ADSL Architecture</a></li>
+	    <li><a href="#adsl-Asymmetric">Asymmetric Digital Subscriber Line</a></li>
+        <li><a href="#1">Technical principles</a></li>
+        <li><a href="#ftth">FTTH GPON Overview</a></li>
+	    <li><a href="#ftth-Fiber">Fiber to the Home</a></li>
+        <li><a href="#2">Key Technical Differences</li></a>
+        <li><a href="#conclusions">Conclusions</a></li>
+        <li><a href="#references">References</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Operating Principles of ADSL and FTTH</h1>
+
+        <!-- Team Members -->
+        <div class="team" id="team">
+            <h2> Autonomous University of the State of Mexico</h2>
+            <li> Network architecture  2024b </li>
+            <li>Teacher -> Dr. en A.P Cozobi Garcia Herrera</li>
+            <h2>Team Members</h2>
+            <li>DIEGO EMILIANO JIMENEZ CONTLA</li>
+            <li>ERIKA COTONIETO ORTEGA</li>
+            <li>CHRISTOFER EDWARD RODRIGUEZ MARTINEZ</li>
+            <li>CARLOS ALFONSO RODRIGUEZ REYES</li>
+        </div>
+
+        <h2 id="adsl-Asymmetric">ADSL Overview</h2>
+        <p>
+            ADSL (Asymmetric Digital Subscriber Line) allows for the simultaneous use of the phone line for voice and internet data. The technology reserves the lowest 4 kHz for voice and uses the remaining bandwidth for data transmission. 
+        </p>
+        <p>
+            Speeds: ADSL offers download speeds up to 2 Mbps and upload speeds up to 300 Kbps. However, the distance from the central office affects these speeds.
+        </p>
+        <p>
+            Flat Rate: ADSL technology enables flat-rate services, as the network resources are only occupied for short bursts, making efficient use of bandwidth.
+        </p>
+
+        <h2 id="adsl-architecture">ADSL Architecture</h2>
+        <p>
+            ADSL requires changes both at the user’s premises and the central office. It uses a specialized modem (ATU-R) on the user’s end and another (ATU-C) at the central office. The DSLAM at the central office aggregates traffic from multiple users and routes it to a Wide Area Network (WAN).
+        </p>
+        <p>
+            Additionally, devices must be installed to separate the voice and data channels, ensuring smooth operation of both services.
+        </p>
+<h2 id="adsl">ADSL (Asymmetric Digital Subscriber Line)</h2>
+        <p>
+            ADSL is a broadband technology that transmits data over traditional copper telephone lines. It uses frequencies between 25 kHz and 1.1 MHz to transmit digital information, while the standard voice uses 0–4 kHz. A <span class="highlight">splitter</span> is installed to separate data from voice signals, preventing interference. ADSL’s performance decreases as distance from the central office increases, with a maximum effective range of around 5 km<sup>[1]</sup>.
+        </p>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Technical Feature</th>
+                    <th>ADSL</th>
+                </tr>
+                <tr>
+                    <td>Downstream Bandwidth</td>
+                    <td>Up to 24 Mbps</td>
+                </tr>
+                <tr>
+                    <td>Upstream Bandwidth</td>
+                    <td>Up to 1 Mbps</td>
+                </tr>
+                <tr>
+                    <td>Distance Limitation</td>
+                    <td>Performance degrades beyond 3 km from the exchange<sup>[2]</sup>.</td>
+                </tr>
+                <tr>
+                    <td>Frequency Range</td>
+                    <td>25 kHz to 1.1 MHz</td>
+                </tr>
+                <tr>
+                    <td>Technology Used</td>
+                    <td>Copper Telephone Lines</td>
+                </tr>
+            </table>
+        </div>
+        <p>
+            ADSL is cost-effective for areas where optical fiber deployment is impractical. However, its main disadvantage is that signal attenuation over long distances results in lower speeds</sup>.
+        </p>
+
+        <h2 id="1">Technical principles</h2> 
+<p>
+Transmission over Copper Wires:    
+ADSL works over traditional copper telephone lines. It allows high-speed data transmission while simultaneously enabling voice calls over the same line.
+</p><p>
+Asymmetric Bandwidth:
+Asymmetric refers to the fact that the download speed is higher than the upload speed. This is ideal for typical users who download more than they upload (e.g., streaming, browsing).
+</p><p>
+Frequency Division:
+ADSL separates data and voice by using different frequency bands. Voice signals use the lower frequency range (up to 4 kHz), while data transmission uses higher frequencies (above 25 kHz).
+Modulation:
+</p><p>
+ADSL uses modulation techniques such as Discrete Multi-Tone (DMT) to split the frequency range into multiple sub-channels. Each sub-channel can carry bits of data, allowing ADSL to achieve higher bandwidth.
+</p><p>
+Distance Limitation:
+The performance of ADSL is highly dependent on the distance between the user and the telephone exchange (DSLAM - Digital Subscriber Line Access Multiplexer). Speeds degrade as distance increases.
+</p>
+
+
+
+        <h2 id="ftth">FTTH GPON Overview</h2>
+        <p>
+            FTTH (Fiber to the Home) with GPON (Gigabit Passive Optical Network) delivers fiber optic-based high-speed internet directly to homes. This technology offers superior bandwidth compared to copper-based systems like ADSL.
+        </p>
+        <p>
+            Main Components:
+        </p>
+        <ul>
+            <li>OLT (Optical Line Terminal): Manages traffic, bandwidth, and buffer control at the central office.</li>
+            <li>Optical Splitter: Splits the optical signal, allowing one fiber to serve multiple users.</li>
+            <li>ONT (Optical Network Terminal): Installed at the client’s premises, connecting them to the OLT via fiber optics.</li>
+        </ul>
+<h2 id="ftth-Fiber">FTTH (Fiber to the Home)</h2>
+        <p>
+            FTTH is a fiber-optic broadband technology that delivers data directly to homes, bypassing traditional copper lines. It transmits signals as light pulses, offering significantly higher bandwidth and reliability compared to ADSL. FTTH uses optical fibers, which are immune to electromagnetic interference and signal degradation over long distances<sup>[3]</sup>.
+        </p>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Technical Feature</th>
+                    <th>FTTH</th>
+                </tr>
+                <tr>
+                    <td>Downstream Bandwidth</td>
+                    <td>Up to 1 Gbps or more</td>
+                </tr>
+                <tr>
+                    <td>Upstream Bandwidth</td>
+                    <td>Up to 1 Gbps or more</td>
+                </tr>
+                <tr>
+                    <td>Distance Limitation</td>
+                    <td>No significant degradation over long distances</td>
+                </tr>
+                <tr>
+                    <td>Technology Used</td>
+                    <td>Optical Fiber</td>
+                </tr>
+                <tr>
+                    <td>Signal Type</td>
+                    <td>Light pulses</td>
+                </tr>
+            </table>
+        </div>
+        <p>
+            FTTH offers symmetrical bandwidth, making it ideal for users with high upload and download demands, such as video conferencing and cloud applications</sup>. Unlike ADSL, FTTH does not suffer from distance limitations, providing consistent speeds over long distances.
+        </p><p>
+Transmission over Optical Fiber:
+FTTH uses fiber-optic cables to deliver internet directly to the user’s home, providing much higher bandwidth compared to ADSL. Fiber-optic cables carry data as light signals, which allows for extremely fast transmission over long distances.
+</p><p>
+Symmetric or Asymmetric Bandwidth:
+FTTH can offer both symmetric (equal download and upload speeds) or asymmetric services, depending on the provider's configuration. Symmetric services are often more common, allowing for activities like video conferencing and cloud storage.
+</p><p>
+High Capacity and Low Latency:
+Since optical fibers have a much larger capacity for data transmission than copper wires, FTTH can deliver significantly higher download and upload speeds (up to gigabits per second). The latency is also lower because light signals travel faster and more efficiently.
+</p><p>
+Passive Optical Network (PON):
+A common architecture for FTTH is the Passive Optical Network (PON). It uses a point-to-multipoint topology where a single optical fiber from the service provider's central office is split to serve multiple homes. No active electronics are required in the distribution network, reducing maintenance needs.
+</p><p>
+Future-Proof Technology:
+FTTH is considered future-proof since optical fibers have a vast data capacity and can support higher speeds as technology improves, without requiring major upgrades to the physical infrastructure.
+</p>
+
+<h2 id="2">Key Technical Differences</h2> 
+<p>
+Transmission Medium: ADSL uses existing copper lines, while FTTH uses fiber-optic cables, which are far superior in terms of speed and capacity.
+</p><p>Signal Type: ADSL transmits electrical signals, while FTTH transmits light, enabling much faster speeds and more reliable connections.
+</p><p>Distance Sensitivity: ADSL suffers from signal degradation over long distances, while FTTH maintains high performance over much greater distances.
+</p>
+
+
+        <!-- Conclusions Section -->
+        <div class="conclusions" id="conclusions">
+            <h2>Conclusions</h2>
+            <p>
+                CARLOS:)   Although ADSL remains a useful technology, FTTH provides significantly higher performance and will likely be the backbone of future broadband connections. The reliability and capacity of FTTH surpass ADSL, particularly in urban areas demanding high bandwidth.
+            </p>
+<p>
+CHRISTOFER:)   Building a website on the operational principles of ADSL and FTTH requires distilling advanced concepts into an accessible format, highlighting the technological shift from copper-based networks to the efficiency of fiber optics. This project not only informs but fosters a deeper understanding of the evolution of telecommunications.
+</p>
+<p>DIEGO:)   ADSL and FTTH represent two distinct approaches to broadband internet, each with its strengths and limitations. ADSL, which operates over copper telephone lines, offers asymmetrical bandwidth and is limited by distance from the provider's exchange, making it suitable for moderate internet use. In contrast, FTTH leverages fiber-optic technology to provide significantly higher speeds, symmetrical bandwidth, and long-term scalability, making it ideal for modern, data-intensive applications. As a result, FTTH is considered a future-proof solution, while ADSL is gradually being phased out in favor of faster, more reliable fiber networks.</p>
+<p>ERIKA:)   ADSL and FTTH are two key technologies for internet access, with fundamental differences in their operation and capabilities. ADSL uses existing copper telephone lines and provides moderate speeds, with performance decreasing over long distances. FTTH, on the other hand, delivers high-speed, reliable internet directly to homes via fiber-optic cables, offering superior bandwidth and scalability with minimal signal degradation. </p> 
+</div>
+
+        <!-- References Section -->
+        <div class="references" id="references">
+            <h2>References</h2> 
+<ul>
+    <li>[1] "An Overview of GPON & FTTH Access Network". Available at: <a target="_blank" href="https://community.fs.com/es/article/an-overview-of-gpon-ftth-access-network.html">https://community.fs.com/es/article/an-overview-of-gpon-ftth-access-network.html</a></li>
+    <li>[2] "Introducción a la FTTH", Fiber Optic Association. Available at: <a target="_blank" href="https://www.thefoa.org/tech/ref/appln/FTTH-ESP/Introduccion%20a%20la%20FTTH.html">https://www.thefoa.org/tech/ref/appln/FTTH-ESP/Introduccion%20a%20la%20FTTH.html</a></li>
+    <li>[3] "Funcionamiento y Configuración del ADSL". Available at: <a target="_blank" href="https://pedrobq.gitbooks.io/fundamentos-de-redes/content/funcionamiento_de_los_modems/funcionamiento_y_configuracion_del_adsl.html">https://pedrobq.gitbooks.io/fundamentos-de-redes/content/funcionamiento_de_los_modems/funcionamiento_y_configuracion_del_adsl.html</a></li>
+    <li>No title. (n.d.). Huawei.com. Retrieved September 22, 2024, from <a target="_blank" href="https://forum.huawei.com/enterprise/en/what-is-adsl-asymmetric-digital-subscriber-line/thread/667263685011324928-667213871523442688">https://forum.huawei.com/enterprise/en/what-is-adsl-asymmetric-digital-subscriber-line/thread/667263685011324928-667213871523442688</a></li>
+
+
+</ul>
+<footer>
+
+            &copy; Network Architecture 2024b
+        </footer>
+    </div>
+
+</body>
+</html>
